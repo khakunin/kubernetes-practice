@@ -1,24 +1,23 @@
-# GKE-and-Sample-App
+## 7 April 2022 
+1. Took referance from velotio's blog to create thee tier application in kuberneted on GKE ( i am doing in minikube ) 
+2. Undestood how the Deployment find the pod it wants to control through 
+        Deployment 
+    
+           Selector: 
+               MatchLabels 
+                <kay> : <Value>
+		
+           Metadata:
+                labels 
+                <key>	: <value>
+3. It took some time to port the Flask Script ( midleware ) from python 2.7 to Python 3.
+4. Built the image after modifying the source code in app.py and updated the image tag in deployment manifest of app. 
+5. There are some issues while connecting to database ( username , password ) 
+6. Understood how mysql service ( DNS ) is used as host from app.y  (  mysql-service.default ) , default since it is in default workspace. 
+7. Used Kubectl port forward to access the webpage from Host machine 
 
-## What is GKE?
-Google Container Engine(GKE) is a Management and orchestration system for Containers. It is a container platform which Kubernetes can manage, in short, it is a hosted Kubernetes. Goal of GKE is to increase the productivity of devops teams by hiding the complexity of setting up the k8s cluster, overlay network, etc by simple user interface
-
-## How to create cluster using GKE?
-Set the zone in which you want to try out the example.  
-    `gcloud config set compute/zone us-west1-a`
- 
-Create the cluster using following command  
-    ```gcloud container --project <project-name> clusters create <cluster-name> --machine-type n1-standard-2 --image-type "CONTAINER_VM" --disk-size "50" --num-nodes 2 --network default --enable-cloud-logging --no-enable-cloud-monitoring```
-
-To verify if cluster is up, check  
-    `kubectl get node`
-
-## How to deploy sample application?
-
-1. Create services,  
-    `kubectl create -f mysql-service.yaml`  
-    `kubectl create -f testapp-service.yaml`
-
-2. Create deployments,  
-    `kubectl create -f mysql-deployment.yaml`  
-    `kubectl create -f testapp-deployment.yaml`
+TODO for 8th April 
+1. Use Confgmap to keep database username and password 
+2. Do Database writes ( Insert Command ) from app.py 
+3. Use Ingress controller to access the services 
+4. Please ADD if you feel anything should be done
