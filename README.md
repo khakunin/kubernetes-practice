@@ -20,3 +20,11 @@ TODO for 8th April
 2. Do Database writes ( Insert Command ) from app.py 
 3. Use Ingress controller to access the services 
 4. Please ADD if you feel anything should be done
+
+
+## 8 April 
+1. Added ingress to Test App service 
+2. No Success in inserting data into mysql due to credential issue. 
+3. TODO : 
+    Identify the username and password for mysql image and try to connnect 
+    Try out Statefulset 
